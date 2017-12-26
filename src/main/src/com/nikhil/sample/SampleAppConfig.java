@@ -5,10 +5,11 @@ import com.google.inject.Injector;
 import com.google.inject.servlet.GuiceServletContextListener;
 import com.nikhil.sample.config.JerseyModule;
 import com.nikhil.sample.config.MySampleModule;
+import com.nikhil.sample.config.SwaggerModule;
 
 public class SampleAppConfig extends GuiceServletContextListener {
     protected Injector getInjector() {
         System.out.println("Binding Modules");
-        return Guice.createInjector(new MySampleModule(), new JerseyModule());
+        return Guice.createInjector(new MySampleModule(), new JerseyModule(), new SwaggerModule());
     }
 }
